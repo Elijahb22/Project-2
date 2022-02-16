@@ -27,6 +27,7 @@ router.get('/', (req, res) => {
   console.log(req.session);
   res.render('homepage');
 });
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -34,4 +35,9 @@ router.get('/login', (req, res) => {
   }
   res.render('login');
 });
+
+router.get('/singlePost', (req, res) => {
+  res.render('single-post');
+});
+
 module.exports = router;
